@@ -1138,7 +1138,7 @@
       // but we're currently in a browser that doesn't support it...
       if (this._wantsHashChange && this._wantsPushState && !this._hasPushState && !atRoot) {
         this.fragment = this.getFragment(null, true);
-        this.location.replace(this.root + this.location.search + '#' + this.fragment);
+        this.location.replace(this.root + _.escape(this.location.search) + '#' + this.fragment);
         // Return immediately as browser will do redirect to new url
         return true;
 
